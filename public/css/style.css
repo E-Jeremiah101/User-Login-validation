@@ -1,0 +1,51 @@
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+    background-image: url('/public/img/boat-sea-cloudy-sky-beautiful-colorful-sunset-evening.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+   .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+   }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .btn-div{
+    column-gap: 80px;
+    row-gap: 80px;
+    
+    }
+
+    button {
+      width: 100px;
+      padding: 16px;
+      background-color: #ff7f50;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 15px;
+    }
+
+    button:hover {
+      background-color: #e8693c;
+    }
