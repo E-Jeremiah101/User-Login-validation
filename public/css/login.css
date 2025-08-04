@@ -39,7 +39,7 @@
       border-radius: 6px;
       background: #ffffff;
       color: #000;
-      
+      font-size: 16px;
     }
     input:focus{
         border: none;
