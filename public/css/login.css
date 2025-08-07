@@ -3,6 +3,10 @@
         margin: 0;
         padding: 0;
     }
+    body.keyboard-open{
+      overflow: hidden;
+      height:100dvh ;
+    }
     body{
     background-image: url('/img/boat-sea-cloudy-sky-beautiful-colorful-sunset-evening.jpg');
     background-size: cover;
