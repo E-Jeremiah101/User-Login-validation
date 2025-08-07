@@ -3,13 +3,24 @@
         margin: 0;
         padding: 0;
     }
-
+    
+:root {
+  --sunset-purple: #6d5eac;
+  --sunset-pink: #f7b7c3;
+  --sunset-orange: #f88f5a;
+  --sunset-gold: #fbc96e;
+  --sunset-blue: #2c3e50;
+  --sunset-cloud: #8c90a3;
+  --sunset-deep: #1c2230;
+}
     
     body{
     margin: 0;
     padding: 0;
-    background-color: #ff7f50;
-    height: auto;
+    /* background: linear-gradient(90deg,rgba(109, 94, 172, 1) 11%, rgba(247, 183, 195, 1) 50%, rgba(248, 143, 90, 1) 100%); */
+    height: fit-content;
+    max-height: fit-content;
+  
    
 }  
    .mother-all{
@@ -23,9 +34,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    color: #ffffff;
+      color: var(--sunset-deep);
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden; 
+     background: linear-gradient(to bottom, var(--sunset-purple), var(--sunset-orange));
    }
    .form-container {
       background-color: rgba(0, 0, 0, 0.5);
@@ -42,7 +54,7 @@
       margin-bottom: 20px;
     }
     .form-container h1{
-      color: #ff7f50;
+        color: var(--sunset-deep)
     }
 
     input[type="text"],
