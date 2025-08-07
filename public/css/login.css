@@ -9,15 +9,15 @@
     margin: 0;
     padding: 0;
     background-color: #ff7f50;
-    height: 100vh;
+    height: auto;
    
 }  
    .mother-all{
     /* background-image: url('/img/boat-sea-cloudy-sky-beautiful-colorful-sunset-evening.jpg'); */
     
-    /* background-size: cover;
+   /*  background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center;*/
     position: fixed;
     top: 0;
     bottom: 0;
@@ -25,7 +25,7 @@
     right: 0;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden; */
+    overflow: hidden; 
    }
    .form-container {
       background-color: rgba(0, 0, 0, 0.5);
