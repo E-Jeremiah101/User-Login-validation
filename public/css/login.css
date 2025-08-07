@@ -3,6 +3,9 @@
         margin: 0;
         padding: 0;
     }
+    :root {
+    --vh: 100%;
+  }
     
     body{
     margin: 0;
@@ -11,7 +14,8 @@
 }  
    .mother-all{
     background-image: url('/img/boat-sea-cloudy-sky-beautiful-colorful-sunset-evening.jpg');
-     background-size: cover;
+    
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: fixed;
