@@ -19,87 +19,63 @@ formControl = input.parentElement;
 formControl.className = 'form-control success';
 };
 
+// Email check
 function checkEmail(input) {
-  const re =
-    /^("(?:[!#-\[\]-\u{10FFFF}]|\\[\t -\u{10FFFF}])*"|[!#-'*+\-/-9=?A-Z\^-\u{10FFFF}](?:\.?[!#-'*+\-/-9=?A-Z\^-\u{10FFFF}])*)@([!#-'*+\-/-9=?A-Z\^-\u{10FFFF}](?:\.?[!#-'*+\-/-9=?A-Z\^-\u{10FFFF}])*|\[[!-Z\^-\u{10FFFF}]*\])$/u;
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (re.test(input.value.trim())) {
     showSuccess(input);
+    return true;
   } else {
     showError(input, "Email is not valid");
+    return false;
   }
 }
 
-//check required function
-function checkRequired(inputArr){
-  inputArr.forEach(function (input){
-   if (input.value.trim() === ''){
-    showError(input, `${getFieldName(input)} is Required`);
-   }
-   else{
-    showSuccess(input);
-  }
-  });
-}
-
-//check input length
-
-function checkLength(input, min, max){
-  if (input.value.length < min) {
-    showError(input, `${getFieldName(input)} must be atleast ${min} characters`)
-  } else if(input.value.length > max) {
-    showError(input, `${getFieldName(input)} must be less than ${max} characters`)
+// Required check
+function checkRequired(input, fieldName) {
+  if (input.value.trim() === '') {
+    showError(input, `${fieldName} is required`);
+    return false;
   } else {
     showSuccess(input);
+    return true;
   }
 }
 
 
-
-//check password matcch
-function checkPasswordMatch(input1, input2){
-  if(input1.value !== input2.value){
-    showError(input2, "Password do not match")
+// Length check
+function checkLength(input, min, max, fieldName) {
+  if (input.value.length < min) {
+    showError(input, `${fieldName} must be at least ${min} characters`);
+    return false;
+  } else if (input.value.length > max) {
+    showError(input, `${fieldName} must be less than ${max} characters`);
+    return false;
+  } else {
+    showSuccess(input);
+    return true;
   }
-  
 }
+
+
 
 //get field name
-function getFieldName(input){
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1)
-}
+// function getFieldName(input){
+//   return input.id.charAt(0).toUpperCase() + input.id.slice(1)
+// }//
 
-//Event listenetrs
+//Event listenetrs or
+// Submit event
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-  //SHORT CUT
-  checkRequired([fullName, userName, email, password ]);
-  // checkLength(username, 5, 15 );
-  checkLength(password, 6, 25);
-  checkEmail(email);
 
-  if (fullName.value === "") {
-    showError(fullName, "Fullname is required");
-  } else {
-    showSuccess(fullName);
-  }
-  if (userName.value === "") {
-    showError(userName, "username is required");
-  } else {
-    showSuccess(userName);
-  }
+  let validFullName = checkRequired(fullName, "Full Name");
+  let validUserName = checkRequired(userName, "Username");
+  let validEmail = checkRequired(email, "Email") && checkEmail(email);
+  let validPassword = checkRequired(password, "Password") && checkLength(password, 6, 25, "Password");
 
-  if (email.value === "") {
-    showError(email, "Email is required");
-  } else if (!isValidEmail(email.value)) {
-    showError(email, "Email is not valid");
-  } else {
-    showSuccess(email);
+  if (validFullName && validUserName && validEmail && validPassword) {
+    window.location.href = "login.html";
   }
-
-  if (password.value === "") {
-    showError(password, "Password is required");
-  } else {
-    showSuccess(password);
-  }
-})
+});
 
