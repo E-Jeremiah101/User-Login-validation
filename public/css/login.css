@@ -10,7 +10,7 @@
    
 }  
    .mother-all{
-    background-image: url('/img/istockphoto-stone.jpg');
+    background-image: url('/asset/img/young-woman-having-face-massage-relaxing-spa-salon_176420-7546.avif');
     
     background-size: cover;
     background-repeat: no-repeat;
@@ -37,6 +37,7 @@
     h2, h1 {
       text-align: center;
       margin-bottom: 20px;
+      text-shadow: 2px 2px 5px#a22f05
     }
     .form-container h1{
       color: #ff7f50;
