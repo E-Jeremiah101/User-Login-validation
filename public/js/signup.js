@@ -19,8 +19,15 @@ formControl = input.parentElement;
 formControl.className = 'form-control success';
 };
 
+// Remove spaces from start and end before validation
+function cleanInput(input) {
+  input.value = input.value.trim();
+  return input.value;
+}
+
 // Email check
 function checkEmail(input) {
+  cleanInput(input); // clean before checking
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (re.test(input.value.trim())) {
     showSuccess(input);
@@ -33,7 +40,8 @@ function checkEmail(input) {
 
 // Required check
 function checkRequired(input, fieldName) {
-  if (input.value.trim() === '') {
+  cleanInput(input); // clean before checking
+  if (input.value.trim() === "") {
     showError(input, `${fieldName} is required`);
     return false;
   } else {
@@ -45,6 +53,7 @@ function checkRequired(input, fieldName) {
 
 // Length check
 function checkLength(input, min, max, fieldName) {
+  cleanInput(input); // clean before checking
   if (input.value.length < min) {
     showError(input, `${fieldName} must be at least ${min} characters`);
     return false;
@@ -59,10 +68,10 @@ function checkLength(input, min, max, fieldName) {
 
 
 
-//get field name
-// function getFieldName(input){
-//   return input.id.charAt(0).toUpperCase() + input.id.slice(1)
-// }//
+// get field name
+function getFieldName(input){
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1)
+}
 
 //Event listenetrs or
 // Submit event
