@@ -62,7 +62,7 @@
 
     button {
       width: 100%;
-      padding: 12px;
+      padding: 11px;
       background-color: #ff7f50;
       border: none;
       border-radius: 6px;
@@ -70,6 +70,7 @@
       font-weight: bold;
       cursor: pointer;
       margin:80px 0 9px 0;
+      font-size:1.1rem ;
     }
 
     button:hover {
@@ -77,7 +78,7 @@
     }
     .dont-hve{
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     
     }
     .dont-hve a{

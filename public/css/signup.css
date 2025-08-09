@@ -84,7 +84,7 @@ input:focus{
 
 button {
 width: 100%;
-padding: 12px;
+padding: 11px;
 background-color: #ff7f50;
 border: none;
 border-radius: 6px;
@@ -92,6 +92,8 @@ color: white;
 font-weight: bold;
 cursor: pointer;
 margin:50px 0 9px 0;
+font-weight: bold;
+font-size: 1.1rem;
 }
 
 button:hover {
@@ -99,7 +101,7 @@ background-color: #e8693c;
 }
 .dont-hve{
 text-align: center;
-font-size: 0.8rem;
+font-size: 0.9rem;
 
 }
 .dont-hve a{
