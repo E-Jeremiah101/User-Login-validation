@@ -14,7 +14,7 @@ const PORT = 5000;
 app.use(express.json())
 
 app.get("/", (req, res) => {
-    res.send("Hello World!")
+    res.send("Hello World")
 });
 
 app.post("/api/signup", async (req, res) => {
